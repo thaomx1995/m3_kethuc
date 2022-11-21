@@ -41,6 +41,9 @@
                         <div class="col-lg-4">
                             <label class="">Số tiền</label>
                         </div>
+                        <div class="col-lg-4">
+                            <label class="">Ghi chú</label>
+                        </div>
                         <div class="col-lg-8">
                             <div class="input text"><input type="text" name="sotien" class="form-control filter-column f-name" value="" id="phone" /></div>
                         </div>

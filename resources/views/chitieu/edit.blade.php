@@ -19,33 +19,48 @@
                 <div class="row d-flex">
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label  class="form-label">Danh mục</label>
+                            <label class="form-label">Danh mục</label>
                             {{-- <input type="text" class="form-control" value="{{ old('danhmuc') ?? $chitieus->danhmuc}}" name="danhmuc" placeholder="Tên"> --}}
                             <div class="col-md-12">
-                                <select name="danhmuc" class="form-select" >
+                                <select name="danhmuc" class="form-select">
                                     @if ($chitieus->danhmuc == 1)
-                                    <option selected value="Gas">Gas</option>
-                                    <option  value="Internet">Internet</option>
-                                    <option  value="Phone">phone</option>
+                                        <option selected value="Gas">Gas</option>
+                                        <option value="Internet">Internet</option>
+                                        <option value="Phone">phone</option>
                                     @else
-                                    <option  value="Gas">Gas</option>
-                                    <option selected value="Internet">Internet</option>
-                                    <option selected value="Phone">phone</option>
-                                @endif
-                            </select>
+                                        <option value="Gas">Gas</option>
+                                        <option selected value="Internet">Internet</option>
+                                        <option selected value="Phone">phone</option>
+                                        @error('danhmuc')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    @endif
+                                </select>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label  class="form-label">Ngày</label>
-                            <input type="date" class="form-control" value="{{ old('ngay') ?? $chitieus->ngay}}" name="ngay" placeholder="">
+                            <label class="form-label">Ngày</label>
+                            <input type="date" class="form-control" value="{{ old('ngay') ?? $chitieus->ngay }}"
+                                name="ngay" placeholder="">
+                            @error('ngay')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <label  class="form-label">Số tiền</label>
-                            <input type="number" class="form-control" value="{{ old('sotien') ?? $chitieus->sotien}}" name="sotien" placeholder="">
+                            <label class="form-label">Số tiền</label>
+                            <input type="number" class="form-control" value="{{ old('sotien') ?? $chitieus->sotien }}"
+                                name="sotien" placeholder="">
+                            @error('sotien')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <label  class="form-label">Ghi chú</label>
-                            <input type="text" class="form-control" value="{{ old('ghichu') ?? $chitieus->ghichu}}" name="ghichu" placeholder="">
+                            <label class="form-label">Ghi chú</label>
+                            <input type="text" class="form-control" value="{{ old('ghichu') ?? $chitieus->ghichu }}"
+                                name="ghichu" placeholder="">
+                            @error('ghichu')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
