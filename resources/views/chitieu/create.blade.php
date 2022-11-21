@@ -17,13 +17,25 @@
                 @csrf
                 <div class="row d-flex">
                     <div class="col-md-6">
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Danh mục</label>
                             <input name="danhmuc" type="text" class="form-control" >
                             @error('danhmuc')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                        </div> --}}
+                        <div class="col-md-12">
+                            <label  class="form-label">Danh mục</label>
+                            <select name="danhmuc" class="form-select">
+                                <option selected></option>
+                                <option value="Gas">Gas</option>
+                                <option value="Internet">Internet</option>
+                                <option value="Phone">Phone</option>
+                            </select>
                         </div>
+                        @error('danhmuc')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="mb-3">
                             <label class="form-label">Ngày</label>
                             <input name="ngay"  type="date" class="form-control" >

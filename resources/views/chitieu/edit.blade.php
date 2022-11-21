@@ -20,7 +20,20 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label  class="form-label">Danh mục</label>
-                            <input type="text" class="form-control" value="{{ old('danhmuc') ?? $chitieus->danhmuc}}" name="danhmuc" placeholder="Tên">
+                            {{-- <input type="text" class="form-control" value="{{ old('danhmuc') ?? $chitieus->danhmuc}}" name="danhmuc" placeholder="Tên"> --}}
+                            <div class="col-md-12">
+                                <select name="danhmuc" class="form-select" >
+                                    @if ($chitieus->danhmuc == 1)
+                                    <option selected value="Gas">Gas</option>
+                                    <option  value="Internet">Internet</option>
+                                    <option  value="Phone">phone</option>
+                                    @else
+                                    <option  value="Gas">Gas</option>
+                                    <option selected value="Internet">Internet</option>
+                                    <option selected value="Phone">phone</option>
+                                @endif
+                            </select>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label  class="form-label">Ngày</label>
@@ -29,6 +42,10 @@
                         <div class="mb-3">
                             <label  class="form-label">Số tiền</label>
                             <input type="number" class="form-control" value="{{ old('sotien') ?? $chitieus->sotien}}" name="sotien" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label  class="form-label">Ghi chú</label>
+                            <input type="text" class="form-control" value="{{ old('ghichu') ?? $chitieus->ghichu}}" name="ghichu" placeholder="">
                         </div>
                     </div>
 

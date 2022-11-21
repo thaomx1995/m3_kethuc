@@ -27,6 +27,7 @@ class ChitieuRequest extends FormRequest
             'danhmuc' => 'required',
             'ngay' => 'required',
             'sotien' => 'required',
+            'ghichu' => 'required',
 
         ];
     }
@@ -36,6 +37,7 @@ class ChitieuRequest extends FormRequest
             'danhmuc.required' => 'không được bỏ trống !',
             'ngay.required' => ' không được bỏ trống!',
             'sotien.required' => ' không được bỏ trống!',
+            'ghichu.required' => ' không được bỏ trống!',
 
         ];
     }
