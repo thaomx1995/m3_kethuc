@@ -39,23 +39,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php $totalAll = 0 @endphp
                     @foreach ($chitieus as $chitieu)
-                        <tr>
+
+                    <tr>
                             <td>{{ $chitieu->id }}</td>
                             <td>{{ $chitieu->danhmuc }}</td>
                             <td>{{ $chitieu->ngay }}</td>
                             <td>{{ number_format($chitieu->sotien) }}</td>
+                            <td>
                             <td>
                                 <form action="{{route('chitieu.destroy',$chitieu->id)}}" method="post">
                                     @method('delete')
                                     @csrf
                                     <a href="{{ route('chitieu.edit', $chitieu->id) }}"
                                             class="btn btn-sm btn-icon btn-success">Edit</a>
-                                    <button onclick="return confirm('bạn muốn xóa truyện này?');" class="btn btn-sm btn-icon btn-danger">Delete</button>
+                                    <button onclick="return confirm('bạn muốn xóa chi tiêu này?');" class="btn btn-sm btn-icon btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>
+                    {{-- @endforeach --}}
+                    @php $totalAll += $chitieu->sotien @endphp
                     @endforeach
+                    <h3 style="color: red">tổng tiền {{number_format($totalAll)}} VND</h3>
                 </tbody>
             </table>
             <div class="col-md-12">
@@ -69,6 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

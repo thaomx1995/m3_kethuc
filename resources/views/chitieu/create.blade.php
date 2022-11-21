@@ -17,13 +17,9 @@
                 @csrf
                 <div class="row d-flex">
                     <div class="col-md-6">
-                        {{-- <div class="mb-3">
-                            <label class="form-label">Danh mục</label>
-                            <input name="danhmuc" type="text" class="form-control" >
-                            @error('danhmuc')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div> --}}
+                        <div class="col-md-6">
+                            <h3>Thêm chi tiêu</h3>
+                        </div>
                         <div class="col-md-12">
                             <label  class="form-label">Danh mục</label>
                             <select name="danhmuc" class="form-select">
@@ -62,6 +58,8 @@
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
+
+
             </form>
         </div>
     </div>

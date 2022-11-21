@@ -18,6 +18,9 @@
                 @method('PUT')
                 <div class="row d-flex">
                     <div class="col-md-6">
+                        <div class="col-md-6">
+                            <h3>Cập nhật chi tiêu</h3>
+                        </div>
                         <div class="mb-3">
                             <label class="form-label">Danh mục</label>
                             {{-- <input type="text" class="form-control" value="{{ old('danhmuc') ?? $chitieus->danhmuc}}" name="danhmuc" placeholder="Tên"> --}}
